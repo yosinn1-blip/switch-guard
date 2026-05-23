@@ -26,4 +26,5 @@ export interface Env {
   NOTIFY_EMAIL: string;
   RESEND_API_KEY: string;
   APP_BASE_URL: string;
+  WORKER_URL: string; // Workerの本番URL（スヌーズリンク生成用）
 }
