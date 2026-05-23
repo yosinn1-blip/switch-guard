@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>設定 | Switch Guard</title>
+  <style>
+    *{box-sizing:border-box;margin:0;padding:0}
+    body{font-family:-apple-system,sans-serif;background:#f5f5f5;padding:20px}
+    .c{max-width:480px;margin:40px auto;background:white;border-radius:12px;padding:24px;box-shadow:0 2px 8px rgba(0,0,0,.1)}
+    h1{font-size:1.4rem;margin-bottom:8px}
+    .hint{font-size:.85rem;color:#666;margin-bottom:20px;line-height:1.6}
+    code{background:#f1f5f9;padding:2px 6px;border-radius:4px;font-size:.85em}
+    label{display:block;font-weight:600;margin-bottom:6px}
+    input{width:100%;padding:10px 12px;border:1px solid #ddd;border-radius:8px;font-size:1rem;font-family:monospace}
+    button{margin-top:16px;width:100%;padding:12px;background:#4f46e5;color:white;border:none;border-radius:8px;font-size:1rem;cursor:pointer;font-weight:600}
+    button:hover{background:#4338ca}
+    #status{margin-top:12px;font-size:.9rem}
+    .error{color:#e53e3e}.success{color:#38a169}
+    nav{margin-bottom:16px}nav a{color:#4f46e5;text-decoration:none;font-size:.9rem}
+  </style>
+</head>
+<body>
+  <div class="c">
+    <nav><a href="index.html">← 戻る</a></nav>
+    <h1>⚙️ 設定</h1>
+    <p class="hint">
+      Cloudflare Workers に設定した <code>WORKER_SECRET</code> と同じ値を入力してください。<br>
+      この値はこのブラウザのlocalStorageのみに保存されます。
+    </p>
+    <label for="secret-input">Worker Secret</label>
+    <input type="password" id="secret-input" placeholder="your-secret-token">
+    <button id="save-btn">保存する</button>
+    <div id="status"></div>
+  </div>
+  <script type="module" src="js/settings.js"></script>
+</body>
+</html>

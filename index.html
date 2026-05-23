@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Switch Guard</title>
+  <style>
+    *{box-sizing:border-box;margin:0;padding:0}
+    body{font-family:-apple-system,sans-serif;background:#f0f2f5;min-height:100vh}
+    header{background:#4f46e5;color:white;padding:16px 20px;display:flex;justify-content:space-between;align-items:center}
+    header h1{font-size:1.2rem}
+    header nav a{color:rgba(255,255,255,.85);text-decoration:none;margin-left:16px;font-size:.9rem}
+    header nav a:hover{color:white}
+    .main{max-width:520px;margin:24px auto;padding:0 16px}
+    .add-btn{display:block;text-align:center;padding:12px;background:#4f46e5;color:white;text-decoration:none;border-radius:10px;font-weight:600;margin-bottom:20px}
+    .add-btn:hover{background:#4338ca}
+    .card{background:white;border-radius:12px;padding:16px;margin-bottom:14px;box-shadow:0 1px 4px rgba(0,0,0,.08)}
+    .card-top{display:flex;justify-content:space-between;align-items:center;margin-bottom:6px}
+    .name{font-weight:700;font-size:1rem}
+    .btn-del{background:none;border:none;cursor:pointer;color:#ccc;font-size:1rem;padding:4px 8px}
+    .btn-del:hover{color:#e53e3e}
+    .meta{font-size:.82rem;color:#888;margin-bottom:10px}
+    .days-left{font-size:.9rem;margin-bottom:6px;color:#555}
+    .bar{height:6px;background:#e2e8f0;border-radius:3px;overflow:hidden;margin-bottom:4px}
+    .fill{height:100%;background:linear-gradient(90deg,#4f46e5,#7c3aed);border-radius:3px;transition:width .3s}
+    .unlock-badge{background:#f0fdf4;color:#16a34a;padding:8px 12px;border-radius:8px;font-weight:600;font-size:.9rem;margin-bottom:8px}
+    .actions{display:flex;gap:8px;margin-top:10px}
+    .btn-compare{flex:1;text-align:center;padding:8px;background:#4f46e5;color:white;text-decoration:none;border-radius:8px;font-size:.85rem;font-weight:600}
+    .btn-compare:hover{background:#4338ca}
+    .btn-snooze{padding:8px 14px;background:#f1f5f9;border:none;border-radius:8px;font-size:.85rem;cursor:pointer;color:#555}
+    .btn-snooze:hover{background:#e2e8f0}
+    .msg{text-align:center;padding:40px 20px;color:#888}
+    .msg a{color:#4f46e5}
+    .msg.error{color:#e53e3e}
+  </style>
+</head>
+<body>
+  <header>
+    <h1>🔒 Switch Guard</h1>
+    <nav>
+      <a href="add.html">+ 追加</a>
+      <a href="settings.html">⚙️ 設定</a>
+    </nav>
+  </header>
+  <div class="main">
+    <a href="add.html" class="add-btn">+ 契約を追加</a>
+    <div id="contract-list"></div>
+  </div>
+  <script type="module" src="js/list.js"></script>
+</body>
+</html>

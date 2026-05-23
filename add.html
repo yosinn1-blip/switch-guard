@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>契約を登録 | Switch Guard</title>
+  <style>
+    *{box-sizing:border-box;margin:0;padding:0}
+    body{font-family:-apple-system,sans-serif;background:#f5f5f5;padding:20px}
+    .c{max-width:480px;margin:20px auto;background:white;border-radius:12px;padding:24px;box-shadow:0 2px 8px rgba(0,0,0,.1)}
+    h1{font-size:1.4rem;margin-bottom:20px}
+    .f{margin-bottom:16px}
+    label{display:block;font-weight:600;margin-bottom:6px;font-size:.9rem}
+    .hint{font-size:.78rem;color:#888;margin-top:3px}
+    input,select,textarea{width:100%;padding:10px 12px;border:1px solid #ddd;border-radius:8px;font-size:1rem;background:white}
+    textarea{min-height:80px;resize:vertical}
+    .opt{color:#999;font-weight:normal;font-size:.8rem}
+    button[type=submit]{margin-top:8px;width:100%;padding:12px;background:#4f46e5;color:white;border:none;border-radius:8px;font-size:1rem;cursor:pointer;font-weight:600}
+    button[type=submit]:hover{background:#4338ca}
+    #status{margin-top:12px;font-size:.9rem}.error{color:#e53e3e}
+    nav{margin-bottom:16px}nav a{color:#4f46e5;text-decoration:none;font-size:.9rem}
+    #lock-in-custom{margin-top:8px;display:none}
+  </style>
+</head>
+<body>
+  <div class="c">
+    <nav><a href="index.html">← 一覧に戻る</a></nav>
+    <h1>➕ 契約を登録</h1>
+    <form id="contract-form">
+      <div class="f">
+        <label>サービス種別</label>
+        <select id="service-type">
+          <option value="electricity">⚡ 電気</option>
+          <option value="gas">🔥 ガス</option>
+          <option value="internet">🌐 ネット</option>
+          <option value="insurance">🛡️ 保険</option>
+          <option value="other">📦 その他</option>
+        </select>
+      </div>
+      <div class="f">
+        <label>会社名</label>
+        <input type="text" id="provider-name" placeholder="例: 東京電力" required>
+      </div>
+      <div class="f">
+        <label>契約開始日</label>
+        <input type="date" id="contract-start" required>
+        <p class="hint">明細書・契約書・Webマイページで確認</p>
+      </div>
+      <div class="f">
+        <label>縛り期間</label>
+        <select id="lock-in-select">
+          <option value="0">縛りなし</option>
+          <option value="12">1年（12ヶ月）</option>
+          <option value="24" selected>2年（24ヶ月）</option>
+          <option value="custom">カスタム</option>
+        </select>
+        <input type="number" id="lock-in-custom" placeholder="月数（例: 36）" min="1">
+      </div>
+      <div class="f">
+        <label>月額概算 <span class="opt">（任意）</span></label>
+        <input type="number" id="monthly-amount" placeholder="例: 8000">
+      </div>
+      <div class="f">
+        <label>顧客番号 / 需給地点特定番号 <span class="opt">（任意・将来の自動申込用）</span></label>
+        <input type="text" id="contract-number" placeholder="明細書に記載の番号">
+      </div>
+      <div class="f">
+        <label>メモ <span class="opt">（任意）</span></label>
+        <textarea id="memo" placeholder="備考など"></textarea>
+      </div>
+      <button type="submit">登録する</button>
+      <div id="status"></div>
+    </form>
+  </div>
+  <script type="module" src="js/add.js"></script>
+</body>
+</html>
