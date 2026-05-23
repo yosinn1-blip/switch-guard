@@ -7,7 +7,7 @@ compatibility_flags = ["nodejs_compat"]
 crons = ["0 0 * * *"]  # 毎日00:00 UTC = 09:00 JST
 
 [vars]
-APP_BASE_URL = "https://YOUR_GITHUB_USERNAME.github.io/switch-guard"
+APP_BASE_URL = "https://yosinn1-blip.github.io/switch-guard"
 
 # Secrets（wrangler secret put で設定）:
 # SUPABASE_URL

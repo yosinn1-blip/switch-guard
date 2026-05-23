@@ -1,5 +1,4 @@
-// デプロイ後にWorkerのURLに書き換える
-const WORKER_URL = 'http://localhost:8787';
+const WORKER_URL = 'https://switch-guard.yosinn1.workers.dev';
 
 export function getSecret() { return localStorage.getItem('worker_secret') || ''; }
 export function setSecret(s) { localStorage.setItem('worker_secret', s); }
