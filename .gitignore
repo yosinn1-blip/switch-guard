@@ -4,3 +4,9 @@ dist/
 .dev.vars
 *.env
 .DS_Store
+
+# Local browser/payment automation experiments.
+# These can reference account-specific flows and should not be published.
+/package.json
+/package-lock.json
+/scripts/
